@@ -39,3 +39,26 @@
 
 ## 五、算法的设计与实现（hadoop+spark集群下运行）
 
+### 卡方检验选择特征
+
+使用Spark MLlib库中的一个特征选择器ChiSqSelector，它基于卡方检验进行特征选择。此次项目选择卡方值最高的5个特征。
+```
+# 使用卡方检验选择特征
+selector = ChiSqSelector(numTopFeatures=5, featuresCol="features", outputCol="selectedFeatures", labelCol="label")
+model = selector.fit(train)
+train = model.transform(train)
+test = model.transform(test)
+```
+
+### 数据标准化处理
+
+使用Spark MLlib库中的一个特征变换器StandardScaler，用于标准化特征。将前面卡方检验选择的特征列进行标准化处理。
+```
+# 标准化处理
+scaler = StandardScaler(inputCol="selectedFeatures", outputCol="scaledFeatures", withMean=True, withStd=True)
+scalerModel = scaler.fit(train)
+train = scalerModel.transform(train)
+test = scalerModel.transform(test)
+```
+
+### 
