@@ -16,3 +16,7 @@
 各数据集的具体字段信息可前往[天猫复购数据集](https://www.heywhale.com/mw/dataset/622d9ebf8a84f900178990ec)
 
 ## 三、对数据集的分析与探索
+
+### 分析不同年龄层，不同群体的用户购买倾向（利用pandas透视表快速地进行分类汇总）
+
+![image](https://github.com/wjy030522/Tmall-Repurchase-Prediction/assets/108457536/0cfd9329-f1dd-4933-8243-e765592e198a)
