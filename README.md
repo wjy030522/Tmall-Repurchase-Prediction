@@ -61,4 +61,36 @@ train = scalerModel.transform(train)
 test = scalerModel.transform(test)
 ```
 
-### 
+### 模型训练与评估
+
+### 逻辑回归
+```
+# 使用逻辑回归模型进行训练和评估
+lr = LogisticRegression(featuresCol="scaledFeatures", labelCol="label", maxIter=10, regParam=0.01)
+model = lr.fit(trainingData)
+predictions = model.transform(testData)
+```
+### 评估结果
+```
+加权精确率：0.8959
+加权召回率：0.9388
+F1-score：0.9095
+```
+
+### 随机森林
+```
+# 创建随机森林模型
+rf = RandomForestClassifier(featuresCol="scaledFeatures", labelCol="label", numTrees=10, maxDepth=5, seed=1)
+
+# 在训练集上拟合模型
+rf_model = rf.fit(trainingData)
+
+# 在测试集上进行预测
+predictions = rf_model.transform(testData)
+```
+### 评估结果
+```
+加权精确率：0.8817
+加权召回率：0.9390
+F1-score：0.9094
+```
