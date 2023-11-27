@@ -15,7 +15,7 @@
 测试数据 test_format1.csv  
 ```
 
-各数据集的具体字段信息可前往[天猫复购数据集](https://www.heywhale.com/mw/dataset/622d9ebf8a84f900178990ec)
+用户行为日志未放到github上，用户行为数据集数据集和各数据集的具体字段信息可前往[天猫复购数据集](https://www.heywhale.com/mw/dataset/622d9ebf8a84f900178990ec)
 
 ## 三、对数据集的分析与探索
 
